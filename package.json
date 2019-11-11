@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/omegaspn/thai-check-typo/issues"
   },
-  "homepage": "https://github.com/omegaspn/thai-check-typo#readme"
+  "homepage": "https://github.com/omegaspn/thai-check-typo#readme",
+  "dependencies": {
+    "trie-prefix-tree": "^1.5.1",
+    "word-break": "0.0.4"
+  }
 }
