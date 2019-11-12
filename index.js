@@ -17,14 +17,13 @@ const correctContent = content => {
 };
 
 function thaiTypoCheck(inputText) {
-  // return true when input is empty string, null, or undefined
+  // skip if input is empty string, null, or undefined
   if (!inputText) return true;
 
-  const dict = fileSync.readFileSync(dictionaryPath, {
+  const text = fileSync.readFileSync(dictionaryPath, {
     encoding: "UTF-8"
   });
-
-  const dictArray = dict.split("\n");
+  const dictArray = text.split("\n");
 
   const longestWordLength = dictArray[0].length;
   const currentTrie = trie(dictArray);
@@ -36,9 +35,10 @@ function thaiTypoCheck(inputText) {
       let last = ret.pop();
       if (!currentTrie.hasWord(last)) return false;
     }
-    // return true when pass all validation
-    return true;
   }
+
+  // return true when pass all validation
+  return true;
 }
 
 module.exports = thaiTypoCheck;
