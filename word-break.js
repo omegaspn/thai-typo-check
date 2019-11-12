@@ -1,12 +1,4 @@
-interface HasWordFunction {
-  (s: string): boolean;
-}
-
-const wordBreak = (
-  s: string,
-  hasWord: HasWordFunction,
-  longestWordLength?: number
-) => {
+function wordBreak(s, hasWord, longestWordLength) {
   const size = s.length;
   if (size === 0) return [];
 
@@ -25,6 +17,6 @@ const wordBreak = (
     }
   }
   return [s];
-};
+}
 
-export default wordBreak;
+module.exports = wordBreak;
