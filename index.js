@@ -1,6 +1,7 @@
 const wordBreak = require("word-break-trie");
 const trie = require("trie-prefix-tree");
 const fileSync = require("fs");
+const dictionaryPath = require.resolve("thai-typo-check/dictionary/dict.txt");
 
 const THAI_REGEX = /([\u0E00-\u0E7F]{2,})/;
 
@@ -19,7 +20,7 @@ function thaiTypoCheck(inputText) {
   // return true when input is empty string, null, or undefined
   if (!inputText) return true;
 
-  const dict = fileSync.readFileSync("./dictionary/dict.txt", {
+  const dict = fileSync.readFileSync(dictionaryPath, {
     encoding: "UTF-8"
   });
 

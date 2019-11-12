@@ -10,7 +10,7 @@ import thaiTypoCheck from "thai-typo-check";
 test("thaiTypoCheck", () => {
   const wordBreakableInput = "ฉันอยากกินยำ";
   const wordUnBreakableInput = "ฉันอยากกินผฟใก่ร์";
-  expect(thaiTypoCheck(wordBreakableInput).toBe(true));
-  expect(thaiTypoCheck(wordUnBreakableInput).toBe(false));
+  expect(thaiTypoCheck(wordBreakableInput)).toBe(true);
+  expect(thaiTypoCheck(wordUnBreakableInput)).toBe(false);
 });
 ```
