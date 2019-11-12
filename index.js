@@ -16,7 +16,7 @@ const correctContent = content => {
   return content.replace(/ํา/g, "ำ");
 };
 
-function thaiTypoCheck(inputText) {
+function thaiTypoCheck(inputText, customWords) {
   // skip if input is empty string, null, or undefined
   if (!inputText) return true;
 
@@ -24,7 +24,9 @@ function thaiTypoCheck(inputText) {
     encoding: "UTF-8"
   });
   const dictArray = text.split("\n");
-
+  if (!!customWords) {
+    dictArray.push(...customWords);
+  }
   const longestWordLength = dictArray[0].length;
   const currentTrie = trie(dictArray);
   const inputs = sentenceSplit(correctContent(inputText));

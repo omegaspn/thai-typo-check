@@ -1,9 +1,10 @@
 const thaiTypoCheck = require(".");
 
-describe("thaiTypoCheck", () => {
+describe.only("thaiTypoCheck", () => {
   it("should return true when no typo", () => {
     expect(thaiTypoCheck("ฉันอยากกินยำ   ")).toBe(true);
     expect(thaiTypoCheck("ฉัน อยากกิน   ยำ")).toBe(true);
+    expect(thaiTypoCheck("ฉันอยากกินยำพัทยา", ["พัทยา"])).toBe(true);
   });
 
   it("should return false when found typos", () => {
