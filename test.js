@@ -3,20 +3,17 @@ const thaiCheckTypo = require(".");
 describe("thaiCheckTypo", () => {
   const dict = ["อยาก", "ข้าว", "มาก", "กิน", "ฉัน"];
 
-  const testCases = [
-    ["ฉันอยากกินข้าว", true],
-    ["ฉนอยากกินข้าว", false],
-    ["ฉันอยากกินข้าววว", false]
-  ];
-  testCases.map(tc => {
-    const [input, output] = tc;
-
-    it("should return true when can correct all typo, else return false ", () => {
-      expect(thaiCheckTypo(input, dict)).toBe(output);
-    });
+  it("should return true when no typo", () => {
+    expect(thaiCheckTypo("ฉันอยากกินข้าว", dict)).toBe(true);
+    expect(thaiCheckTypo("ฉัน อยากกิน   ข้าว", dict)).toBe(true);
   });
 
-  it("should skip and return true if inputText is null or undefined", () => {
+  it("should return false when found typos", () => {
+    expect(thaiCheckTypo("ฉนอยากกินข้าว", dict)).toBe(false);
+    expect(thaiCheckTypo("ฉันอยากกินข้าววว", dict)).toBe(false);
+  });
+
+  it("should skip and return true when inputText is null or empty", () => {
     expect(thaiCheckTypo("", dict)).toBe(true);
     expect(thaiCheckTypo(null, dict)).toBe(true);
     expect(thaiCheckTypo(undefined, dict)).toBe(true);
