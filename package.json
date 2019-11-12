@@ -1,5 +1,5 @@
 {
-  "name": "thai-check-typo",
+  "name": "thai-typo-check",
   "version": "0.0.1",
   "description": "for check thai typo",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/omegaspn/thai-check-typo.git"
+    "url": "git+https://github.com/omegaspn/thai-typo-check.git"
   },
   "keywords": [
     "typo"
@@ -16,9 +16,9 @@
   "author": "Supanat Wongchai",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/omegaspn/thai-check-typo/issues"
+    "url": "https://github.com/omegaspn/thai-typo-check/issues"
   },
-  "homepage": "https://github.com/omegaspn/thai-check-typo#readme",
+  "homepage": "https://github.com/omegaspn/thai-typo-check#readme",
   "dependencies": {
     "trie-prefix-tree": "^1.5.1",
     "word-break-trie": "^1.0.1"

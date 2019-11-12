@@ -14,7 +14,7 @@ const correctContent = content => {
   return content.replace(/ํา/g, "ำ");
 };
 
-function thaiCheckTypo(inputText, dict) {
+function thaiTypoCheck(inputText, dict) {
   // return true when input is empty string, null, or undefined
   if (!inputText) return true;
 
@@ -33,4 +33,4 @@ function thaiCheckTypo(inputText, dict) {
   }
 }
 
-module.exports = thaiCheckTypo;
+module.exports = thaiTypoCheck;
