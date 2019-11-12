@@ -1,4 +1,4 @@
-declare function thaiTypoCheck(inputText: string, dict: string[]): boolean;
+declare function thaiTypoCheck(inputText: string): boolean;
 declare namespace thaiTypoCheck {}
 
 export = thaiTypoCheck;
