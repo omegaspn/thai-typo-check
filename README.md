@@ -1,15 +1,15 @@
-# thai-check-typo
+# thai-typo-check
 
 utils for check Thai typo
 
 ## TypeScript
 
 ```ts
-import thaiCheckTypo from "thai-check-typo";
+import thaiTypoCheck from "thai-typo-check";
 
-test("thaiCheckTypo", () => {
+test("thaiTypoCheck", () => {
   const input = "ฉันอยากกินข้าว";
   const dict = ["อยาก", "ข้าว", "มาก", "กิน", "ฉัน"];
-  expect(thaiCheckTypo(input, dict).toBe(true));
+  expect(thaiTypoCheck(input, dict).toBe(true));
 });
 ```

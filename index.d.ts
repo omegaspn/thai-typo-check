@@ -1,4 +1,4 @@
-declare function thaiCheckTypo(inputText: string, dict: string[]): boolean;
-declare namespace thaiCheckTypo {}
+declare function thaiTypoCheck(inputText: string, dict: string[]): boolean;
+declare namespace thaiTypoCheck {}
 
-export = thaiCheckTypo;
+export = thaiTypoCheck;
