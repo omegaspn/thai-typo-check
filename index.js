@@ -1,4 +1,4 @@
-const wordBreak = require("./word-break");
+const wordBreak = require("word-break-trie");
 const trie = require("trie-prefix-tree");
 
 const THAI_REGEX = /([\u0E00-\u0E7F]{2,})/;
@@ -15,12 +15,12 @@ const correctContent = content => {
 };
 
 function thaiCheckTypo(inputText, dict) {
+  // return true when input is empty string, null, or undefined
+  if (!inputText) return true;
+
   const longestWordLength = dict[0].length;
   const currentTrie = trie(dict);
   const inputs = sentenceSplit(correctContent(inputText));
-
-  // when input is empty string, return true
-  if (inputText.length === 0) return true;
 
   for (let input of inputs) {
     if (THAI_REGEX.test(input)) {
@@ -28,7 +28,7 @@ function thaiCheckTypo(inputText, dict) {
       let last = ret.pop();
       if (!currentTrie.hasWord(last)) return false;
     }
-    // when pass all validation return true
+    // return true when pass all validation
     return true;
   }
 }
