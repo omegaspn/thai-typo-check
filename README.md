@@ -8,9 +8,10 @@ utils for check Thai typo
 import thaiTypoCheck from "thai-typo-check";
 
 test("thaiTypoCheck", () => {
-  const wordBreakableInput = "ฉันอยากกินยำ";
-  const wordUnBreakableInput = "ฉันอยากกินผฟใก่ร์";
-  expect(thaiTypoCheck(wordBreakableInput)).toBe(true);
-  expect(thaiTypoCheck(wordUnBreakableInput)).toBe(false);
+  const goodSentence = "ฉันอยากกินยำ";
+  const typoSentence = "ฉันอยากกินผฟใก่ร์";
+
+  expect(thaiTypoCheck(goodSentence)).toBe(true);
+  expect(thaiTypoCheck(typoSentence)).toBe(false);
 });
 ```
