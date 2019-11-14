@@ -6,6 +6,10 @@ describe("thaiTypoCheck", () => {
     expect(thaiTypoCheck("ฉัน อยากกิน   ยำ")).toBe(true);
   });
 
+  it("should support custom words", () => {
+    expect(thaiTypoCheck("ฉันอยากกินยำพัทยา", ["พัทยา"])).toBe(true);
+  });
+
   it("should return false when found typos", () => {
     expect(thaiTypoCheck("ฉนอยากกินยำ")).toBe(false);
     expect(thaiTypoCheck("ฉันอยากกินยำา")).toBe(false);
