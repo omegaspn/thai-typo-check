@@ -7,7 +7,9 @@ describe("thaiTypoCheck", () => {
   });
 
   it("should support custom words", () => {
-    expect(thaiTypoCheck("ฉันอยากกินยำพัทยา", ["พัทยา"])).toBe(true);
+    expect(thaiTypoCheck("ฉันอยากกินยำซี้ดพัทยา", ["ซี้ด", "พัทยา"])).toBe(
+      true
+    );
   });
 
   it("should return false when found typos", () => {
