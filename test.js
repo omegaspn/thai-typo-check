@@ -31,7 +31,6 @@ describe("thaiTypoCheckWords", () => {
   });
 
   it("returns array of typos if any", () => {
-    const expectedArray = ["ผผผผ", "ฝฝฝฝ"];
-    expect(thaiTypoCheckWords("มาผผผผtestมาฝฝฝฝ")).toEqual(expectedArray);
+    expect(thaiTypoCheckWords("มาผผผผtestมาฝฝฝฝ")).toBe("มาผผผผ");
   });
 });

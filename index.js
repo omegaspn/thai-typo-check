@@ -35,20 +35,19 @@ function thaiTypoCheckWords(inputText, customWords) {
   const longestWordLength = dictArray[0].length;
   const currentTrie = trie(dictArray);
   const inputs = sentenceSplit(correctContent(inputText));
-  const typos = [];
 
   for (let input of inputs) {
     if (THAI_REGEX.test(input)) {
       let ret = wordBreak(input, currentTrie.hasWord, longestWordLength);
       let last = ret.pop();
       if (!currentTrie.hasWord(last)) {
-        typos.push(last);
+        return `${ret}${last}`;
       }
     }
   }
-  if (typos.length > 0) return typos;
+
   // return true when pass all validation
-  else return undefined;
+  return undefined;
 }
 
 module.exports = {
