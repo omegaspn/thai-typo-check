@@ -1,4 +1,4 @@
-const thaiTypoCheck = require(".");
+const { thaiTypoCheck, thaiTypoCheckWords } = require(".");
 
 describe("thaiTypoCheck", () => {
   it("should return true when no typo", () => {
@@ -22,5 +22,16 @@ describe("thaiTypoCheck", () => {
     expect(thaiTypoCheck("")).toBe(true);
     expect(thaiTypoCheck(null)).toBe(true);
     expect(thaiTypoCheck(undefined)).toBe(true);
+  });
+});
+
+describe("thaiTypoCheckWords", () => {
+  it("should return undefined when no typos", () => {
+    expect(thaiTypoCheckWords("มา")).toBe(undefined);
+  });
+
+  it("returns array of typos if any", () => {
+    const expectedArray = ["ผผผผ", "ฝฝฝฝ"];
+    expect(thaiTypoCheckWords("มาผผผผtestมาฝฝฝฝ")).toEqual(expectedArray);
   });
 });

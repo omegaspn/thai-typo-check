@@ -17,8 +17,13 @@ const correctContent = content => {
 };
 
 function thaiTypoCheck(inputText, customWords) {
+  const ret = thaiTypoCheckWords(inputText, customWords);
+  return ret === undefined;
+}
+
+function thaiTypoCheckWords(inputText, customWords) {
   // skip if input is empty string, null, or undefined
-  if (!inputText) return true;
+  if (!inputText) return undefined;
 
   const text = fileSync.readFileSync(dictionaryPath, {
     encoding: "UTF-8"
@@ -30,17 +35,23 @@ function thaiTypoCheck(inputText, customWords) {
   const longestWordLength = dictArray[0].length;
   const currentTrie = trie(dictArray);
   const inputs = sentenceSplit(correctContent(inputText));
+  const typos = [];
 
   for (let input of inputs) {
     if (THAI_REGEX.test(input)) {
       let ret = wordBreak(input, currentTrie.hasWord, longestWordLength);
       let last = ret.pop();
-      if (!currentTrie.hasWord(last)) return false;
+      if (!currentTrie.hasWord(last)) {
+        typos.push(last);
+      }
     }
   }
-
+  if (typos.length > 0) return typos;
   // return true when pass all validation
-  return true;
+  else return undefined;
 }
 
-module.exports = thaiTypoCheck;
+module.exports = {
+  thaiTypoCheck,
+  thaiTypoCheckWords
+};

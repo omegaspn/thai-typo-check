@@ -4,4 +4,11 @@ declare function thaiTypoCheck(
 ): boolean;
 declare namespace thaiTypoCheck {}
 
+declare function thaiTypoCheckWords(
+  inputText: string,
+  customWords?: string[]
+): string[] | undefined;
+declare namespace thaiTypoCheckWords {}
+
 export = thaiTypoCheck;
+export = thaiTypoCheckWords;
