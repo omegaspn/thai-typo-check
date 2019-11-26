@@ -41,7 +41,7 @@ function thaiTypoCheckWords(inputText, customWords) {
       let ret = wordBreak(input, currentTrie.hasWord, longestWordLength);
       let last = ret.pop();
       if (!currentTrie.hasWord(last)) {
-        return `${ret}${last}`;
+        return `${ret}>>${last}<<`;
       }
     }
   }

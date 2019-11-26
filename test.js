@@ -30,7 +30,7 @@ describe("thaiTypoCheckWords", () => {
     expect(thaiTypoCheckWords("มา")).toBe(undefined);
   });
 
-  it("returns array of typos if any", () => {
-    expect(thaiTypoCheckWords("มาผผผผtestมาฝฝฝฝ")).toBe("มาผผผผ");
+  it("returns next typo when found typo", () => {
+    expect(thaiTypoCheckWords("มาผผผผtestมาฝฝฝฝ")).toBe("มา>>ผผผผ<<");
   });
 });

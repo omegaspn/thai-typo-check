@@ -22,6 +22,6 @@ test("thaiTypoCheck", () => {
 
 test("thaiTypoCheckWords", () => {
   expect(thaiTypoCheckWords(goodSentence)).toBe(undefined);
-  expect(thaiTypoCheckWords(typoSentence)).toEqual(["ผฟใก่ร์"]);
+  expect(thaiTypoCheckWords(typoSentence)).toEqual("ฉัน,อยาก,กิน>>ผฟใก่ร์<<");
 });
 ```
