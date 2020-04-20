@@ -25,3 +25,7 @@ test("thaiTypoCheckWords", () => {
   expect(thaiTypoCheckWords(typoSentence)).toEqual("ฉัน,อยาก,กิน>>ผฟใก่ร์<<");
 });
 ```
+
+## License
+
+MIT
