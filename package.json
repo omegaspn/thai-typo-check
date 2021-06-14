@@ -1,6 +1,6 @@
 {
   "name": "thai-typo-check",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "for check thai typo",
   "main": "index.js",
   "scripts": {
